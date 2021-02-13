@@ -44,6 +44,7 @@ namespace GrpcService
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGrpcService<GreeterService>().EnableGrpcWeb().RequireCors("AllowAll");
+                endpoints.MapGrpcService<ProductsService>().EnableGrpcWeb().RequireCors("AllowAll");
 
                 endpoints.MapGet("/",
                     async context =>
