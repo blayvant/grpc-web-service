@@ -36,6 +36,8 @@ namespace GrpcService
         {
             foreach (var product in _allProducts)
             {
+                // Delay to visually demonstrate streaming
+                await Task.Delay(2000);
                 await responseStream.WriteAsync(product);
             }
         }
